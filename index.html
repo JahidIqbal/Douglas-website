@@ -3,48 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Douglas - The Goodest Boy</title>
+    <title>D</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/style.css" />
   </head>
-  <body class="bg-gray-100">
-    <!-- navigation -->
-    <nav class="bg-amber-600 text-white p-4 shadow-md">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">Douglas</h1>
-        <div class="md:flex space-x-6 hidden">
-          <!-- Desktop Menu -->
-          <a href="#about" class="hover:text-amber-200">About</a>
-          <a href="#gallery" class="hover:text-amber-200">Gallery</a>
-          <a href="#habits" class="hover:text-amber-200">Habits</a>
-        </div>
-
-        <!-- Mobile Menu Toggle -->
-        <label for="menu-toggle" class="md:hidden cursor-pointer ">
+  <body class="bg-yellow-50 min-h-screen flex flex-col font-sans">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <h1 class="text-2xl font-bold text-yellow-600">🐾 Do</h1>
+        <!-- Hamburger / Cross button -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-yellow-600 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <!-- Hamburger icon -->
           <svg
+            id="hamburger-icon"
             class="w-6 h-6"
             fill="none"
             stroke="currentColor"
+            stroke-width="2"
             viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
-        </label>
+          <!-- Close icon -->
+          <svg
+            id="close-icon"
+            class="w-6 h-6 hidden"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <!-- Desktop menu -->
+        <ul class="hidden md:flex gap-6 text-gray-700 font-medium">
+          <li><a href="#about" class="hover:text-yellow-600">About</a></li>
+          <li><a href="#gallery" class="hover:text-yellow-600">Gallery</a></li>
+          <li><a href="#fun" class="hover:text-yellow-600">Fun Facts</a></li>
+          <li><a href="#contact" class="hover:text-yellow-600">Contact</a></li>
+        </ul>
       </div>
 
-      <!-- Mobile Menu -->
-       <input type="checkbox" id="menu-toggle" class="hidden"/>
-      <div id="mobile-menu" class="hidden md:hidden mt-2 flex flex-col space-y-2">
-        <a href="#about" class="hover:text-amber-200 py-2">About</a>
-        <a href="#gallery" class="hover:text-amber-200 py-2">Gallery</a>
-        <a href="#habits" class="hover:text-amber-200 py-2">Habits</a>
+      <!-- mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+        <ul class="flex flex-col gap-3 font-medium text-yellow-700">
+          <li><a href="#about" class="block hover:text-yellow-600">About</a></li>
+          <li><a href="#gallery" class="block hover:text-yellow-600">Gallery</a></li>
+          <li><a href="#fun" class="block hover:text-yellow-600">Fun Facts</a></li>
+          <li><a href="#contact" class="block hover:text-yellow-600">Contact</a></li>
+        </ul>
       </div>
-    </div>
     </nav>
+
+
+    <script>
+      const menuToggle=document.getElementById("menu-toggle");
+      const mobileMenu=document.getElementById("mobile-menu");
+      const hamburgerIcon=document.getElementById("humburger-icon");
+      const closeIcon=document.getElementById("close-icon");
+
+      menuToggle.addEventListener("click",()=>{
+        mobileMenu.classList.toggle("hidden");
+        hamburgerIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>
