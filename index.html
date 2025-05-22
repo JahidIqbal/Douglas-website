@@ -8,7 +8,9 @@
   </head>
   <body class="bg-yellow-50 min-h-screen flex flex-col font-sans">
     <nav class="bg-white shadow-md sticky top-0 z-50">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div
+        class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
         <h1 class="text-2xl font-bold text-yellow-600">🐾 Do</h1>
         <!-- Hamburger / Cross button -->
         <button
@@ -56,22 +58,46 @@
       <!-- mobile menu -->
       <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
         <ul class="flex flex-col gap-3 font-medium text-yellow-700">
-          <li><a href="#about" class="block hover:text-yellow-600">About</a></li>
-          <li><a href="#gallery" class="block hover:text-yellow-600">Gallery</a></li>
-          <li><a href="#fun" class="block hover:text-yellow-600">Fun Facts</a></li>
-          <li><a href="#contact" class="block hover:text-yellow-600">Contact</a></li>
+          <li>
+            <a href="#about" class="block hover:text-yellow-600">About</a>
+          </li>
+          <li>
+            <a href="#gallery" class="block hover:text-yellow-600">Gallery</a>
+          </li>
+          <li>
+            <a href="#fun" class="block hover:text-yellow-600">Fun Facts</a>
+          </li>
+          <li>
+            <a href="#contact" class="block hover:text-yellow-600">Contact</a>
+          </li>
         </ul>
       </div>
     </nav>
 
+    <!-- main content -->
+    <main class="flex-grow">
+      <!-- Hero -->
+      <section class="bg-yellow-100 py-16 text-center px-4">
+        <h2 class="text-4xl font-bold text-yellow-700 mb-4">Meet D</h2>
+        <p class="text-lg text-gray-700 max-w-xl mx-auto mb-6">
+          I'm Do, the most playful and loyal companion you'll ever meet. I love
+          belly rubs, chasing my tail, and making humans smile!
+        </p>
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg"
+          alt="D"
+          class="mx-auto rounded-full w-48 h-48 object-cover shadow-lg border-4 border-yellow-300"
+        />
+      </section>
+    </main>
 
     <script>
-      const menuToggle=document.getElementById("menu-toggle");
-      const mobileMenu=document.getElementById("mobile-menu");
-      const hamburgerIcon=document.getElementById("humburger-icon");
-      const closeIcon=document.getElementById("close-icon");
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const hamburgerIcon = document.getElementById("humburger-icon");
+      const closeIcon = document.getElementById("close-icon");
 
-      menuToggle.addEventListener("click",()=>{
+      menuToggle.addEventListener("click", () => {
         mobileMenu.classList.toggle("hidden");
         hamburgerIcon.classList.toggle("hidden");
         closeIcon.classList.toggle("hidden");
